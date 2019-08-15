@@ -4,7 +4,9 @@ class Profile < ActiveRecord::Base
   validate :first_last_both_not_null, :either_male_or_female, :sue_cannot_be_male
 
 
-   def get_all_profiles
+   def self.get_all_profiles(min,max)
+
+   		Profile.where("birth_year > #{min} AND birth_year < #{max}").order(birth_year: :asc)
 	
    end
 
