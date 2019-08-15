@@ -6,7 +6,7 @@ class Profile < ActiveRecord::Base
 
    def self.get_all_profiles(min,max)
 
-   		Profile.where("birth_year > #{min} AND birth_year < #{max}").order(birth_year: :asc)
+   		Profile.where("birth_year >= #{min} AND birth_year <= #{max}").order(birth_year: :asc)
 	
    end
 
