@@ -3,6 +3,12 @@ class Profile < ActiveRecord::Base
 
   validate :first_last_both_not_null, :either_male_or_female, :sue_cannot_be_male
 
+
+   def get_all_profiles
+	
+   end
+
+
   def sue_cannot_be_male
 
   	if (first_name == "Sue" and gender == "male")
